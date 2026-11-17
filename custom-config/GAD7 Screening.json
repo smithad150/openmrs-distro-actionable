@@ -1,0 +1,467 @@
+{
+  "name": "GAD7 Screening",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "pages": [
+    {
+      "label": "GAD-7",
+      "sections": [
+        {
+          "label": "Introduction",
+          "isExpanded": true,
+          "questions": [
+            {
+              "type": "markdown",
+              "questionOptions": {
+                "rendering": "markdown"
+              },
+              "id": "gad7Intro",
+              "value": [
+                "**GAD-7 Anxiety Screening**",
+                "",
+                "A screening tool and measure of symptom severity for the four most common anxiety disorders (generalized anxiety disorder, panic disorder, social phobia and post-traumatic stress disorder (PTSD).",
+                "",
+                "**Instructions:** Over the last 2 weeks, how often have you been bothered by any of the following problems?"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "GAD-7 Screening",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Screening Date",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "160753"
+                  },
+                  {
+                    "type": "SNOMED-CT",
+                    "value": "439771001"
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true",
+                  "validators": [
+                    {
+                      "type": "date",
+                      "allowFutureDates": "false"
+                    },
+                    {
+                      "type": "js_expression",
+                      "failsWhenExpression": "isDateBefore(myValue, '1980-01-01')"
+                    }
+                  ]
+                }
+              ],
+              "id": "gad7Date"
+            },
+            {
+              "label": "1. Feeling nervous, anxious or on edge over past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167003AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167003"
+                  },
+                  {
+                    "type": "LOINC",
+                    "value": "69725-0"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad1"
+            },
+            {
+              "label": "2. Not able to stop or control worrying in the last 2 weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167005"
+                  },
+                  {
+                    "type": "LOINC",
+                    "value": "68509-9"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad2"
+            },
+            {
+              "label": "3. Trouble relaxing over past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167064AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167064"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad3"
+            },
+            {
+              "label": "4. Being so restless that it's hard to sit still over past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167065"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad4"
+            },
+            {
+              "label": "5. Becoming easily annoyed or irritable over past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167066"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad5"
+            },
+            {
+              "label": "6. Feeling afraid as if something awful might happen over past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "167067"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad6"
+            },
+            {
+              "label": "7. Worrying too much about different things over the past two weeks",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "168591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "168591"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not at all",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Several days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "More than half the days",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Nearly every day",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "required": "true",
+                  "unspecified": "true"
+                }
+              ],
+              "id": "gad7"
+            },
+            {
+              "label": "GAD-7 Total Score (Questions 1-7)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "CIEL:165185",
+                "max": "21",
+                "min": "0",
+                "calculate": {
+                  "calculateExpression": "(gad1 && gad2 && gad3 && gad4 && gad5 && gad6 && gad7) ? ((q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad1)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad2)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad3)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad4)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad5)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad6)+(q => q === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 0 : q === '167000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : q === '167001AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : q === '167002AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)(gad7)) : ''"
+                },
+                "conceptMappings": [
+                  {
+                    "type": "SNOMED-CT",
+                    "value": "445455005"
+                  },
+                  {
+                    "type": "CIEL",
+                    "value": "165185"
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "*",
+                  "readonly": "true"
+                }
+              ],
+              "id": "gad7TotalScore"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Notes",
+      "sections": [
+        {
+          "label": "Additional Notes",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Clinician Notes",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "165095AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "AMPATH",
+                    "value": "1915"
+                  },
+                  {
+                    "type": "LOINC",
+                    "value": "48767-8"
+                  },
+                  {
+                    "type": "CIEL",
+                    "value": "160632"
+                  }
+                ]
+              },
+              "id": "clinicianNotes"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableIntents": [
+    {
+      "intent": "*",
+      "display": "PHQ/GAD Screening"
+    }
+  ],
+  "processor": "EncounterFormProcessor",
+  "uuid": "f149163d-08bb-4c19-90bc-1b139805feaf",
+  "referencedForms": [],
+  "encounterType": "36db5123-0ad5-41c0-9037-625b46e0ceef",
+  "encounter": "gad_screen",
+  "description": "GAD7 screening"
+}

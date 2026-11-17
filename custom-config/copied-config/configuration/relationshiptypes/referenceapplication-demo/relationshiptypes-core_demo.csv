@@ -1,0 +1,5 @@
+Uuid,Void/Retire,Name,Description,Weight,Preferred,A is to b,B is to a
+53d8a8f3-0084-4a52-8666-c655f5bd2689,,Supervisor/Supervisee,A description for supervisor to supervisee relationship,,,Supervisor,Supervisee
+117ac27a-7fec-4834-8fad-d967c702c15a,,Clinician/Patient,A relationship from a care provider to the patient,,,Clinician,Patient
+8c8bbfe3-8454-41f9-a180-55f7058af9bd,,Community Health Worker/Patient,CHW to Patient relationship,,,Community Health Worker,Patient
+057de23f-3d9c-4314-9391-4452970739c6,,Other/Other,A description for a relationship type not covered here,,,Other,Other

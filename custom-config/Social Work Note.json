@@ -1,0 +1,199 @@
+{
+  "name": "Social Work Note",
+  "description": "A form used to document social work interventions and contacts",
+  "version": "1.1",
+  "published": true,
+  "retired": false,
+  "encounter": "Consultation",
+  "pages": [
+    {
+      "label": "Social Work Clinical Note",
+      "sections": [
+        {
+          "label": "Note",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Service Date",
+              "type": "encounterDatetime",
+              "questionOptions": {
+                "rendering": "date"
+              },
+              "required": "true",
+              "default": "",
+              "id": "encDate",
+              "validators": [
+                {
+                  "type": "date"
+                }
+              ],
+              "questionInfo": "Date the encounter took place",
+              "datePickerFormat": "calendar"
+            },
+            {
+              "type": "encounterProvider",
+              "label": "Provider Name",
+              "id": "provider",
+              "required": "true",
+              "default": "",
+              "questionOptions": {
+                "rendering": "ui-select-extended"
+              }
+            },
+            {
+              "id": "serviceType",
+              "type": "obs",
+              "label": "Type of Service Provided",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "CIEL:168146",
+                "answers": [
+                  {
+                    "concept": "CIEL:163312",
+                    "label": "Psychotherapy"
+                  },
+                  {
+                    "concept": "CIEL:169400",
+                    "label": "Capacity/Psychosocial Assessment"
+                  },
+                  {
+                    "concept": "CIEL:5486",
+                    "label": "Social Work Services"
+                  },
+                  {
+                    "concept": "CIEL:161548",
+                    "label": "Unspecified"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "encounterLocation",
+              "label": "Service Location",
+              "id": "location",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "ui-select-extended"
+              }
+            },
+            {
+              "label": "Clinical Note",
+              "type": "obs",
+              "required": true,
+              "id": "encounterNote",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "160029AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [],
+                "answers": []
+              }
+            },
+            {
+              "label": "Upload Collateral",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "file",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "type": "AMPATH",
+                    "value": "1238"
+                  },
+                  {
+                    "type": "SNOMED CT",
+                    "value": "CT: 312853008"
+                  },
+                  {
+                    "type": "CIEL",
+                    "value": "1238"
+                  }
+                ]
+              },
+              "id": "fileUpLoad",
+              "questionInfo": "Uploads a file or captures an image"
+            },
+            {
+              "label": "Book Follow-Up?",
+              "type": "obs",
+              "required": false,
+              "id": "followUpNeeded",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "167079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Appointments",
+              "required": false,
+              "id": "appointmentWorkspaceLauncher",
+              "questionOptions": {
+                "rendering": "workspace-launcher",
+                "buttonLabel": "Add appointments",
+                "workspaceName": "appointments-form-workspace"
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty (followUpNeeded) || followUpNeeded !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Screening Tools",
+      "isExpanded": "false",
+      "sections": [
+        {
+          "label": "GAD-7",
+          "isExpanded": "false",
+          "questions": [],
+          "reference": {
+            "form": "GAD7 Screening",
+            "page": "GAD-7",
+            "section": "GAD-7 Screening",
+            "excludeQuestions": [
+              "gad7Date"
+            ]
+          }
+        },
+        {
+          "label": "PHQ-9",
+          "isExpanded": "false",
+          "questions": [],
+          "reference": {
+            "form": "PHQ-9 Screening",
+            "page": "PHQ-9 Screening",
+            "section": "PHQ-9",
+            "excludeQuestions": [
+              "phq9Date"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "encounterType": "dd528487-82a5-4082-9c72-ed246bd49591",
+  "referencedForms": [
+    {
+      "formName": "GAD7 Screening",
+      "alias": "GAD7 Screening"
+    },
+    {
+      "formName": "PHQ-9 Screening",
+      "alias": "PHQ-9 Screening"
+    }
+  ],
+  "uuid": "eee376e6-3cdf-46b1-ab26-463d1d1e9d53"
+}

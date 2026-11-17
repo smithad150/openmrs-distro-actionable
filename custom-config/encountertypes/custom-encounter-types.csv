@@ -1,0 +1,7 @@
+Uuid,Void/Retire,Name,Description,View privilege,Edit privilege,_order:1000
+0e8230ce-bd1d-43f5-a863-cf44344fa4b0,,Social Work Intake,Intake for Social Work Services,,,,
+dd528487-82a5-4082-9c72-ed246bd49591,,Consultation,Consultation encounter,,,,
+d7151f82-c1f3-4152-a605-2f9ea7414a79,,Social Work Visit,Standard Social Work Visit,,,,
+36db5123-0ad5-41c0-9037-625b46e0ceef,,Capacity Assessment,Capacity Assessment,,,,
+ca3aed11-1aa4-42a1-b85c-8332fc8001fc,,Collateral,Collateral,,,,
+67a71486-1a54-468f-ac3e-7091a9a79584,,Capacity Screening,Screening for capacity assessment,,,,

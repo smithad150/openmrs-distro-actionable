@@ -33,9 +33,21 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY startup.sh /usr/local/bin/startup.sh
 RUN chmod +x /usr/local/bin/startup.sh
 
+#copy built SPA files
+COPY / /usr/share/nginx/html
+
+#copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=dev /app/spa /usr/share/nginx/html
-COPY config-core_demo.json /usr/share/nginx/html
+COPY config.json /usr/share/nginx/html
 
 CMD ["/usr/local/bin/startup.sh"]
+
+#copy favicon
+COPY ./src/main/resources/favicon.ico /usr/share/nginx/html/favicon.ico
+#copy logos
+COPY ./src/main/resources/logo.svg /usr/share/nginx/html
+COPY ./src/main/resources/logo1.svg /usr/share/nginx/html
+COPY ./src/main/resources/favicon.svg /usr/share/nginx/html
+

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkopenmrs=globalThis.webpackChunkopenmrs||[]).push([["2873"],{8608(e,a,l){l.r(a),l.d(a,{default:()=>n,immutable:()=>i});var r=l(9159),t=l(1632);let i=e=>(a,l,r)=>(r.revalidateOnFocus=!1,r.revalidateIfStale=!1,r.revalidateOnReconnect=!1,r.refreshInterval=0,e(a,l,r)),n=(0,t.withMiddleware)(r.u,i)}}]);

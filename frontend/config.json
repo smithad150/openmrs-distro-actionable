@@ -1,0 +1,144 @@
+{
+  "@openmrs/esm-home-app": {
+    "leftNavMode": "normal",
+    "defaultDashboardPerRole": {
+      "Organizational: Social Worker": "appointments",
+      "Organizational: Provider": "service-queues"
+    }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "${openmrsSpaBase}/logo1.svg",
+      "alt": "Logo"
+    },
+    "twoFactorAuth": {
+      "enabled": true
+    }
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "${openmrsSpaBase}/logo1.svg",
+      "alt": "actionABLE - OpenMRS",
+      "link": "${openmrsSpaBase}/home"
+    }
+  },
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#abb2bf",
+    "Brand color #2": "#fad102",
+    "Brand color #3": "#282c33",
+    "implementationName": "actionABLE Social Work"
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "restrictByVisitLocationTag": true,
+    "showUpcomingAppointments": true,
+    "disableEmptyTabs": true,
+    "encounterEditableDuration": 0
+  },
+  "@openmrs/esm-app-shell": {
+    "Enabled feature flags": ["enable-embedded-form-view"]
+  },
+  "@openmrs/esm-patient-search-app": {
+    "search": {
+      "patientChartUrl": "${openmrsSpaBase}/patient/${patientUuid}/chart/",
+      "showRecentlySearchedPatients": true,
+      "disableTabletSearchOnKeyUp": true,
+      "searchFilterFields": {
+        "dateOfBirth": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "@openmrs/esm-appointments-app": {
+    "appointmentsTableColumns": [
+      "patientName",
+      "location",
+      "serviceType",
+      "dateTime",
+      "status"
+    ],
+    "customPatientChartUrl": "${openmrsSpaBase}/patient/${patientUuid}/chart",
+    "checkInButton": {
+      "enabled": false
+    },
+    "checkOutButton": {
+      "enabled": false
+    },
+    "allowAllDayAppointments": false,
+    "appointmentTypes": ["Scheduled","WalkIn","Virtual"],
+    "appointmentStatuses": [
+      "Requested",
+      "Scheduled",
+      "CheckedIn",
+      "Completed",
+      "Cancelled",
+      "Missed"
+    ]
+  },
+  "@openmrs/esm-patient-registration-app": {
+    "sections": [
+     "demographics",
+     "emergencyContact"
+    ],
+    "sectionDefinitions": [
+      {
+        "id": "demographics",
+        "name": "Client Information",
+        "fields": ["name","gender","dob","id","phoneNumber","email","address"]
+      },
+      {
+        "id": "emergencyContact",
+        "name": "Emergency Contact",
+        "fields": ["emergencyContactName","emergencyContactRelationship","emergencyContactPhone"]
+      }
+    ],
+    "fieldDefinitions": [
+      {
+        "id": "phoneNumber",
+        "type": "person attribute",
+        "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+        "label": "Phone",
+        "validation": {
+          "required": true,
+          "matches": "^\\+?[1-9]\\d{1,14}$"
+        }
+      },
+      {
+        "id": "email",
+        "type": "person attribute",
+        "uuid": "31818c5b-db8b-11f1-9c13-fe1a4ed2c093",
+        "label": "email",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "id": "emergencyContactName",
+        "type": "person attribute",
+        "label": "Emergency Contact",
+        "uuid": "2368c8a6-afe3-4dcd-87fd-eb1a5fcae5da",
+        "validation": {
+          "required": "true"
+        }
+      },
+      {
+        "id": "emergencyContactRelationship",
+        "type": "person attribute",
+        "label": "Relationship to Client",
+        "uuid": "01619b1b-989f-4fa5-9a90-f317e22bb206",
+        "validation": {
+          "required": "true"
+        }
+      },
+      {
+        "id": "emergencyContactPhone",
+        "type": "person attribute",
+        "label": "Phone",
+        "uuid": "e006c1d4-a20e-4b1d-b349-510b1b23742c",
+        "validation": {
+          "required": "true"
+        }
+      }
+    ]
+  }
+}

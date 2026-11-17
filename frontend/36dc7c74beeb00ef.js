@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkopenmrs=globalThis.webpackChunkopenmrs||[]).push([["2498"],{5428(e,a,l){l.r(a),l.d(a,{SWRConfig:()=>s.S,default:()=>s.u,mutate:()=>u.k,preload:()=>o.preload,unload:()=>u.l,unstable_serialize:()=>n,useSWRConfig:()=>o.useSWRConfig});var s=l(9159),u=l(7746),o=l(1632);let n=e=>(0,u.s)(e)[0]}}]);

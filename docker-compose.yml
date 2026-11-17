@@ -1,6 +1,6 @@
 services:
   gateway:
-    image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
+    image: openmrs/openmrs-reference-application-3-gateway:3.8.0
     restart: "unless-stopped"
     depends_on:
       - frontend
@@ -9,26 +9,29 @@ services:
       - "80:80"
 
   frontend:
-    image: openmrs/openmrs-reference-application-3-frontend:${TAG:-qa}
+    image: openmrs/openmrs-reference-application-3-frontend:3.8.0
     restart: "unless-stopped"
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
-      SPA_CONFIG_URLS: /openmrs/spa/config-core_demo.json
-      SPA_DEFAULT_LOCALE:
+      SPA_CONFIG_URLS: /openmrs/spa/config.json
+      SPA_DEFAULT_LOCALE: en
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
       timeout: 5s
+    volumes:
+      - ./frontend:/usr/share/nginx/html/
     depends_on:
       - backend
 
   backend:
-    image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
+    image: openmrs/openmrs-reference-application-3-backend:3.8.0
     restart: "unless-stopped"
     depends_on:
       - db
     environment:
       OMRS_CONFIG_MODULE_WEB_ADMIN: "true"
+#set auto update and create tables to false after initial setup
       OMRS_CONFIG_AUTO_UPDATE_DATABASE: "true"
       OMRS_CONFIG_CREATE_TABLES: "true"
       OMRS_CONFIG_CONNECTION_SERVER: db
@@ -39,7 +42,8 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost:8080/openmrs"]
       timeout: 5s
     volumes:
-      - openmrs-data:/openmrs/data
+      - ./openmrs-data:/openmrs/data
+      - ./custom-config:/openmrs/distribution/openmrs_config
 
   # MariaDB
   db:
